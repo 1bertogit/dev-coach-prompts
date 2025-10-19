@@ -1,0 +1,49 @@
+{
+  "name": "dev-coach-prompts",
+  "version": "1.0.0",
+  "description": "Sistema de prompts estruturados para coaching de desenvolvimento usando metodologia 4W+",
+  "keywords": [
+    "prompts",
+    "ai",
+    "development",
+    "coaching",
+    "cursor",
+    "claude",
+    "chatgpt",
+    "4w-methodology",
+    "best-practices"
+  ],
+  "author": "Development Coach Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/dev-coach-prompts"
+  },
+  "scripts": {
+    "validate:translations": "node scripts/validate-translations.js",
+    "validate:json": "node -e \"const fs = require('fs'); const files = process.argv.slice(1); files.forEach(f => { try { JSON.parse(fs.readFileSync(f, 'utf8')); console.log('✅', f); } catch(e) { console.error('❌', f, e.message); process.exit(1); } })\"",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules",
+    "format:check": "prettier --check '**/*.{md,json}'",
+    "format:write": "prettier --write '**/*.{md,json}'",
+    "test": "npm run validate:json && npm run format:check"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.37.0",
+    "prettier": "^3.6.2"
+  },
+  "files": [
+    "system-prompt-dev-coach.md",
+    "system-prompt-resumido.md",
+    "guia-de-uso.md",
+    "resumo-adicoes.md",
+    "CLAUDE.md",
+    "README.md",
+    "examples/",
+    "templates/",
+    "scripts/",
+    "docs/"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
